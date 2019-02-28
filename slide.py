@@ -18,17 +18,17 @@ class Slide:
         tags = self.image1._tags
         if not self.horizontal:
             tags = tags | self.image2._tags
-        return tags 
+        return tags
 
     def get_interest(self, other):
         common = self.get_tags() | other.get_tags()
         self_only  = self.get_tags()  ^ other.get_tags()
         other_only = other.get_tags() ^ self.get_tags()
 
-        return min(common, self_only, other_only)
+        return min(len(common), len(self_only), len(other_only))
 
 
-         
+
 
 
 
@@ -40,5 +40,3 @@ class Image:
         self._tags = _tags.union(img_tags)
         self._id = img_id
         self.horizontal = horizontal
-
-
