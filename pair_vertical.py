@@ -3,7 +3,7 @@ from input_output.input_script import get_vh
 from slide import Image
 from slide import Slide
 
-def pair_vertical(input_file):
+def pair(input_file):
     slides = []
     vertical, horizontal = get_vh("input_output/" + input_file)
     while (len(vertical) > 0):
@@ -18,7 +18,9 @@ def pair_vertical(input_file):
     for i in range(len(horizontal)):
         Image_horizontal = Image(horizontal[i][0], True, horizontal[i][1])
         Slide_h = Slide(Image_horizontal)
-    slides.append(Slide_h)
+        slides.append(Slide_h)
+    return slides
+
 
 def merge(tags_1, tags_2): ## merging the tags of two vertical photos
     tag_set = {}
