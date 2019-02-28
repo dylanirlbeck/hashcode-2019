@@ -2,6 +2,17 @@ import pair_vertical
 import sys
 import slideshow
 
+def get_results(input_file):
+    slides = pair_vertical.pair(input_file)
+    slides = slideshow.gen_slideshow(slides)
+    output = "" + str(len(slides)) + "\n"
+    for slide in slides:
+        output += str(slide.image1.img_id)
+        if (not horizontal):
+            output += str(slide.image2.img_id)
+        slide += "\n"
+    return output
+
 sys.stdout=open("a_out.txt","w")
 print(get_results("input_output/a_example.txt"))
 sys.stdout.close()
@@ -23,13 +34,4 @@ print(get_results("input_output/e_shiny_selfies.txt"))
 sys.stdout.close()
 
 
-def get_results(input_file):
-    slides = pair_vertical.pair(input_file)
-    slides = slideshow.gen_slideshow(slides)
-    output = "" + str(len(slides)) + "\n"
-    for slide in slides:
-        output += str(slide.image1.img_id)
-        if (not horizontal):
-            output += str(slide.image2.img_id)
-        slide += "\n"
-    return output
+
