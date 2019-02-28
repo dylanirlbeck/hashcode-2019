@@ -1,7 +1,9 @@
 import random
+from input_output.input_script import get_vh
 from slide import Image
 
 images = []
+vertical, horizontal = get_vh("input_output/filename")
 while (len(vertical) > 0):
     rand_int = random.randint(1, len(list))
     ids = (id_1 = list[0][0], list[rand_int][0])
