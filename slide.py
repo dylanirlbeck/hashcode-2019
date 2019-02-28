@@ -15,7 +15,7 @@ class Slide:
         return tags
 
     def get_interest(self, other):
-        common = self.get_tags() | other.get_tags()
+        common = self.get_tags() & other.get_tags()
         self_only  = self.get_tags()  ^ other.get_tags()
         other_only = other.get_tags() ^ self.get_tags()
 
