@@ -23,6 +23,7 @@ def get_vh(file_name):
             new_element.append(line.split()[2:])
             vertical.append(new_element)
         id += 1
+    return vertical, horizontal
 
 
 
