@@ -10,8 +10,6 @@ def get_vh(file_name):
 
     id = 0
     
-    print(lines[1:])
-
     for line in lines[1:-1]:
         new_element = []
         if line[0] == "H":
